@@ -81,6 +81,6 @@ var j = 10;
 
 // This will give an error unlike var const and let is hoised but is hoiseted on the temperal dead zone so the
 //  it will throw an error - ReferenceError: Cannot access 'k' before initialization
-console.log("k--->", k);
+// console.log("k--->", k);
 
 const k = 11;
