@@ -116,3 +116,24 @@ runOnce();
 runOnce();
 runOnce();
 runOnce();
+
+const genricFunctionOnce = (fn, context) => {
+  let ran;
+  return function () {
+    if (fn) {
+      ran = fn.apply(context || this, arguments);
+      fn = null;
+    }
+    return ran;
+  };
+};
+
+const logHello = genricFunctionOnce((x) => console.log("Hello", x));
+
+logHello("Hello");
+logHello();
+logHello();
+logHello();
+logHello();
+
+// Check the memoise in the closure video
